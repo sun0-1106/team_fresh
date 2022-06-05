@@ -4,7 +4,7 @@ import Logo from '../images/logo_w.png';
 const Container = styled.div`
   width: 100%;
   height: 300px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #191919;
 `;
 const Img = styled.img`
   width: 409px;
