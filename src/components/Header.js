@@ -1,47 +1,120 @@
 import styled from 'styled-components';
 import Logo from '../images/logo_w.png';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
-  position: absolute;
+  ${({ scrollMove }) =>
+    scrollMove
+      ? `
+          background-color: rgba(2, 21, 48, 0.9);
+        `
+      : `
+          background-color: none;
+        `}
+  position: fixed;
   width: 100%;
   height: 62.047px;
-  background-color: rgba(2, 21, 48, 0.9);
 `;
 const Pic = styled.img`
   position: absolute;
   width: 110px;
   object-fit: cover;
-  left: 0;
+  left: 350px;
+  top: 18px;
 `;
 const Box = styled.ul`
-  position: relative;
+  position: absolute;
   display: flex;
-  left: 800px;
-  width: 30%;
+  justify-content: space-between;
+  list-style: none;
+  top: -15px;
+  right: 340px;
+  width: 404.5px;
   height: 100%;
-  border: 1px solid red;
+  line-height: 62px;
+  padding: 0;
 `;
 const List = styled.li`
-  list-style: none;
+  position: relative;
+  float: left;
   width: 100px;
   color: #fff;
   font-size: 18px;
+  list-style: none;
+  .ulBox {
+    opacity: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    .ulBox {
+      position: absolute;
+      list-style: none;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 100px;
+      opacity: 100%;
+    }
+  }
+`;
+const MiniList = styled.li`
+  list-style: none;
+  font-size: 14px;
+  float: none;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
 `;
 const Header = () => {
+  const navigate = useNavigate();
   const scrollRef = useRef();
   const [scrollMove, setScrollMove] = useState(false);
-  //스크롤 안내릴땐 투명색상, 스크롤 내리면 배경색상 생김!!!
-  //스크롤 내려도 항상 맨 위에 고정
-  const handleScroll = () => {};
+
+  const goToBlank = () => {
+    navigate('/blank');
+  };
+
+  const updateScroll = () => {
+    if (window.scrollY <= 1) {
+      setScrollMove(false);
+    } else {
+      setScrollMove(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateScroll);
+    return () => {
+      window.addEventListener('scroll', updateScroll);
+    };
+  });
+
   return (
-    <Container>
+    <Container ref={scrollRef} scrollMove={scrollMove}>
       <Pic src={Logo} alt='로고'></Pic>
       <Box>
         <List>회사소개</List>
-        <List>서비스소개</List>
+        <List>
+          서비스소개
+          <ul className='ulBox'>
+            <MiniList onClick={goToBlank}>물류</MiniList>
+            <MiniList onClick={goToBlank}>유통</MiniList>
+            <MiniList onClick={goToBlank}>프랜차이즈</MiniList>
+            <MiniList onClick={goToBlank}>보험</MiniList>
+          </ul>
+        </List>
         <List>인재채용</List>
-        <List>고객지원</List>
+        <List>
+          고객지원
+          <ul className='ulBox'>
+            <MiniList onClick={goToBlank}>팀프뉴스</MiniList>
+            <MiniList onClick={goToBlank}>문의하기</MiniList>
+            <MiniList onClick={goToBlank}>자주 묻는 질문</MiniList>
+          </ul>
+        </List>
       </Box>
     </Container>
   );

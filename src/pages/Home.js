@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <Container>
       <Header />
-      {/* <Carousel />
+      <Carousel />
       <p>
         안전하고 신속하게 고객에 먹거리를 제공하고 있습니다.
         <br />
@@ -23,7 +23,9 @@ const Home = () => {
       <IntroduceService />
       <Competency />
       <div>박스 3개</div>
-      <Footer /> */}
+      <Footer />
+      <Footer />
+      <Footer />
     </Container>
   );
 };
