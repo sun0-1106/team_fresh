@@ -34,7 +34,7 @@ const Box = styled.div`
     margin-left: 10px;
   }
 `;
-const AddressBox = () => {
+const AddressBox = ({ result }) => {
   return (
     <Container>
       <Txt>06035</Txt>

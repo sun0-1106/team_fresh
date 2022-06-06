@@ -22,15 +22,16 @@ const Search = styled.input`
   margin-bottom: 10px;
 `;
 
-//과제 2만들 때 .env에있는 포트번호로 연결
 const Delivery = () => {
   const [keyDown, setKeyDown] = useState(false);
+  const [address, setAddress] = useState();
+  const [result, setResult] = useState();
 
   const postAddress = async () => {
     try {
       const res = await axios.post(
         'https://tmsapidev.teamfresh.co.kr/api/delivery/searchDeliveryAreaForTest',
-        { addrBasic: '서울특별시 송파구 위례성대로 12길 15-1' },
+        { addrBasic: address },
         {
           headers: {
             'Content-Type': 'application/json',
@@ -38,7 +39,9 @@ const Delivery = () => {
           },
         },
       );
-      console.log(res);
+      if (res.data) {
+        setResult(res.data.result);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -52,12 +55,12 @@ const Delivery = () => {
     <Container>
       <Search
         placeholder='예) 판교역로 235,분당 주공, 삼평동 681'
-        onKeyDown={() => {
+        onKeyDown={e => {
           setKeyDown(true);
+          setAddress(e.target.value);
         }}
       />
-      {/* {!keyDown ? <Tip /> : <div></div>} */}
-      <AddressBox />
+      {result ? result.map(el => <AddressBox result={el} />) : <Tip />}
       우편번호 서비스
     </Container>
   );
