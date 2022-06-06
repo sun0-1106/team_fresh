@@ -15,6 +15,7 @@ const Container = styled.div`
   position: fixed;
   width: 100%;
   height: 62.047px;
+  z-index: 100;
 `;
 const Pic = styled.img`
   position: absolute;

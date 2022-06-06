@@ -3,6 +3,8 @@
 npm install
 npm run start
 
+## 파일 구조
+
 ## 과제 1
 
 팀프레시 사이트 클론 코딩
