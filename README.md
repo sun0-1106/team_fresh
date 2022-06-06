@@ -7,15 +7,15 @@ npm run start
 
 📦src<br/>
 ┣ 📂components<br/>
-┃ ┣ 📜AddressBox.js<br/>
+┃ ┣
 ┃ ┣ 📜Carousel.js<br/>
 ┃ ┣ 📜Competency.js<br/>
 ┃ ┣ 📜Footer.js<br/>
 ┃ ┣ 📜Header.js<br/>
 ┃ ┣ 📜ImageRotate.js<br/>
 ┃ ┣ 📜IntroduceService.js<br/>
-┃ ┣ 📜ThreeBox.js<br/>
-┃ ┗ 📜Tip.js<br/>
+┃ ┣ 📜Modal.js<br/>
+┃ ┗ 📜ThreeBox.js<br/>
 ┣ 📂images<br/>
 ┣ 📂pages<br/>
 ┃ ┣ 📜Blank.js<br/>
