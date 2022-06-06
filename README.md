@@ -41,4 +41,4 @@ api를 활용한 새벽배송 가능 여부 구현
 
 ## 어려웠던 점
 
-과제 1의 header를 만들 때 styled-components에서 중첩된 셀렉터내에서 hover가 생각처럼 안돼서 당황했었다.
+과제 1의 header를 만들 때 styled-components에서 중첩된 셀렉터 내에서 hover가 생각처럼 안돼서 당황했었다.
