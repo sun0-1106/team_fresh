@@ -1,9 +1,34 @@
 ## 실행 방법
 
-npm install
+npm install<br/>
 npm run start
 
 ## 파일 구조
+
+📦src<br/>
+┣ 📂components<br/>
+┃ ┣ 📜Carousel.js<br/>
+┃ ┣ 📜Competency.js<br/>
+┃ ┣ 📜Footer.js<br/>
+┃ ┣ 📜Header.js<br/>
+┃ ┣ 📜ImageRotate.js<br/>
+┃ ┣ 📜IntroduceService.js<br/>
+┃ ┗ 📜Tip.js<br/>
+┣ 📂images<br/>
+┣ 📂pages<br/>
+┃ ┣ 📜Blank.js<br/>
+┃ ┣ 📜Delivery.js<br/>
+┃ ┣ 📜Home.js<br/>
+┃ ┗ 📜Intro.js<br/>
+┣ 📜.env<br/>
+┣ 📜App.css<br/>
+┣ 📜App.js<br/>
+┣ 📜App.test.js<br/>
+┣ 📜index.css<br/>
+┣ 📜index.js<br/>
+┣ 📜logo.svg<br/>
+┣ 📜reportWebVitals.js<br/>
+┗ 📜setupTests.js<br/>
 
 ## 과제 1
 
