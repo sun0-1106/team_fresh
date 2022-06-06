@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+//컴포넌트
 import Header from '../components/Header';
 import Carousel from '../components/Carousel';
 import ImageRotate from '../components/ImageRotate';
 import IntroduceService from '../components/IntroduceService';
 import Competency from '../components/Competency';
 import Footer from '../components/Footer';
+import ThreeBox from '../components/ThreeBox';
 
 const Container = styled.div`
   width: 100%;
@@ -17,6 +19,7 @@ const WhiteBox = styled.div`
   font-size: 30px;
   line-height: 35px;
 `;
+
 const Home = () => {
   return (
     <Container>
@@ -30,7 +33,7 @@ const Home = () => {
       <ImageRotate />
       <IntroduceService />
       <Competency />
-      <div>박스 3개</div>
+      <ThreeBox />
       <Footer />
     </Container>
   );

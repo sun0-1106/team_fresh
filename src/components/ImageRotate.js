@@ -17,7 +17,7 @@ const Container = styled.div`
 const Curtain = styled.div`
   position: absolute;
   width: 100%;
-  height: 1032px;
+  height: 1070px;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 25;
 `;
@@ -97,6 +97,7 @@ const ArrowDown = styled(Arrow)`
 const BottomBox = styled(TopBox)``;
 const Image = styled.img`
   width: 100%;
+  height: 1070px;
 `;
 const Box2 = styled.div`
   position: absolute;

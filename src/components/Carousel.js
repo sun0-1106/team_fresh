@@ -13,6 +13,7 @@ const Container = styled.div`
 const Album = styled.img`
   width: 100%;
   height: 975px;
+  transition: all ease 2s;
 `;
 const Text = styled.div`
   position: absolute;

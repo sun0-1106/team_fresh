@@ -16,7 +16,7 @@ const Text = styled.div`
 const IconBox = styled.div`
   width: 500px;
   height: 100px;
-  //border: 1px solid yellow;
+  border: 1px solid yellow;
 `;
 const Icon = styled.img`
   width: 50px;

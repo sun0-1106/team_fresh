@@ -9,7 +9,12 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 790px;
-  border: 2px solid purple;
+  //border: 2px solid purple;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0% 50%,
+    rgba(0, 0, 0, 0.05) 50% 100%
+  );
 `;
 const TitleBox = styled.div`
   position: absolute;
@@ -40,7 +45,6 @@ const Box = styled.div`
   transform: translate(-50%, -50%);
   width: 1150px;
   height: 500px;
-  border: 1px solid red;
 `;
 const Frame1 = styled.div`
   ${({ isOpen }) =>
@@ -56,7 +60,16 @@ const Frame1 = styled.div`
   height: 500px;
   margin: 0 0.15%;
   overflow: hidden;
+  transition: all ease 0.5s;
   img {
+    ${({ isOpen }) =>
+      isOpen === 'first'
+        ? `
+      filter: brightness(80%);
+        `
+        : `
+      filter: brightness(50%);
+        `}
     position: absolute;
     left: 0;
     width: 629.05px;
@@ -74,6 +87,16 @@ const Frame2 = styled(Frame1)`
       : `
       width: 14.7%;
         `}
+  img {
+    ${({ isOpen }) =>
+      isOpen === 'second'
+        ? `
+      filter: brightness(90%);
+        `
+        : `
+      filter: brightness(50%);
+        `}
+  }
 `;
 const Frame3 = styled(Frame1)`
   ${({ isOpen }) =>
@@ -84,6 +107,16 @@ const Frame3 = styled(Frame1)`
       : `
       width: 14.7%;
         `}
+  img {
+    ${({ isOpen }) =>
+      isOpen === 'third'
+        ? `
+      filter: brightness(90%);
+        `
+        : `
+      filter: brightness(50%);
+        `}
+  }
 `;
 const Frame4 = styled(Frame1)`
   ${({ isOpen }) =>
@@ -94,20 +127,51 @@ const Frame4 = styled(Frame1)`
       : `
       width: 14.7%;
         `}
+  img {
+    ${({ isOpen }) =>
+      isOpen === 'last'
+        ? `
+      filter: brightness(90%);
+        `
+        : `
+      filter: brightness(50%);
+        `}
+  }
 `;
 const TBox = styled.div`
   position: absolute;
-  border: 2px solid yellow;
+  width: 559.047em;
+  height: 95px;
+  padding: 40px 40px 30px 40px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 30;
 `;
 const MiniTitle = styled.div`
   position: absolute;
-  border: 2px solid red;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 500;
   color: #fff;
   z-index: 30;
 `;
 const Explain = styled.div`
+  position: absolute;
+  top: 90px;
+  font-size: 17px;
+  font-weight: 300;
   color: #fff;
+`;
+const MiniTitle2 = styled.div`
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #fff;
+  z-index: 30;
 `;
 const Competency = () => {
   const [isOpen, setIsOpen] = useState('first');
@@ -135,11 +199,11 @@ const Competency = () => {
               </Explain>
             </TBox>
           ) : (
-            <MiniTitle>
+            <MiniTitle2>
               특허 보유
               <br />
               TMS
-            </MiniTitle>
+            </MiniTitle2>
           )}
         </Frame1>
         <Frame2
@@ -151,19 +215,15 @@ const Competency = () => {
           <img src={packaging} />
           {isOpen === 'second' ? (
             <TBox>
-              <MiniTitle>
-                국내 1위
-                <br />
-                새벽배송
-              </MiniTitle>
+              <MiniTitle>국내 1위 새벽배송</MiniTitle>
               <Explain>대한민국 1위 안정된 새벽배송망 구축</Explain>
             </TBox>
           ) : (
-            <MiniTitle>
+            <MiniTitle2>
               국내 1위
               <br />
               새벽배송
-            </MiniTitle>
+            </MiniTitle2>
           )}
         </Frame2>
         <Frame3
@@ -181,7 +241,7 @@ const Competency = () => {
               </Explain>
             </TBox>
           ) : (
-            <MiniTitle>24시간 관제</MiniTitle>
+            <MiniTitle2>24시간 관제</MiniTitle2>
           )}
         </Frame3>
         <Frame4
@@ -197,11 +257,11 @@ const Competency = () => {
               <Explain>합법적으로 허가 받은 차량만을 섭외해 운영</Explain>
             </TBox>
           ) : (
-            <MiniTitle>
+            <MiniTitle2>
               라이선스
               <br />
               보유 차량망
-            </MiniTitle>
+            </MiniTitle2>
           )}
         </Frame4>
       </Box>
