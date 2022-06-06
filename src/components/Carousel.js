@@ -87,10 +87,6 @@ const Btn3 = styled(Btn1)`
 const Carousel = () => {
   const [picture, setPicture] = useState('one');
 
-  // useEffect(() => {
-  //   console.log(picture);
-  // }, []);
-
   return (
     <Container>
       <Album

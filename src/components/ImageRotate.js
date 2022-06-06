@@ -12,13 +12,12 @@ import arrowIcon from '../images/arrowicon.png';
 
 const Container = styled.div`
   width: 100%;
-  height: 1033px;
-  border: 2px solid green;
+  height: 1030px;
 `;
 const Curtain = styled.div`
   position: absolute;
   width: 100%;
-  height: 1030px;
+  height: 1032px;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 25;
 `;
@@ -99,6 +98,19 @@ const BottomBox = styled(TopBox)``;
 const Image = styled.img`
   width: 100%;
 `;
+const Box2 = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1210px;
+  height: 105px;
+  z-index: 20;
+`;
 const ImageRotate = () => {
   return (
     <Container>
@@ -159,6 +171,11 @@ const ImageRotate = () => {
             </ItemBox>
           </BottomBox>
         </Box>
+        {/*하단 문구 */}
+        <Box2>
+          <ArrowUp src={arrowIcon}></ArrowUp>
+          <Text>최적화 시스템 기반 서비스 운영</Text>
+        </Box2>
       </Curtain>
       <Image src={harbor} alt='이미지gif' muted autoPlay loop playsInline />
     </Container>
