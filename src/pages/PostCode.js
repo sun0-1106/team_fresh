@@ -1,7 +1,9 @@
 import React from 'react';
 import DaumPostcode from 'react-daum-postcode';
+import { useNavigate } from 'react-router-dom';
 
 const PostCode = () => {
+  const navigate = useNavigate();
   // 우편번호 검색 후 주소 클릭 시 실행될 함수, data callback 용
   const handlePostCode = data => {
     let fullAddress = data.address;
@@ -20,6 +22,9 @@ const PostCode = () => {
     console.log(data);
     console.log(fullAddress);
     console.log(data.zonecode);
+    navigate('/deliveryAfter', {
+      state: { data: data, fullAddress: fullAddress },
+    });
   };
 
   const postCodeStyle = {

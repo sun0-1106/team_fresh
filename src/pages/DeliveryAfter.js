@@ -1,31 +1,32 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import Tip from '../components/Tip';
-import AddressBox from '../components/AddressBox';
 
 const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #e8e8e8;
-  color: gray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 800px;
+  border: 1px solid #ccc;
 `;
-const Search = styled.input`
-  width: 100%;
-  height: 46px;
-  font-size: 18px;
-  padding-left: 15px;
-  margin-bottom: 10px;
+const Address = styled.div`
+  width: 95%;
+  height: 50px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
 `;
-
-const Delivery = () => {
+const Search = styled.input``;
+const DeliveryAfter = () => {
   const [keyDown, setKeyDown] = useState(false);
   const [address, setAddress] = useState();
   const [result, setResult] = useState();
+  const { state } = useLocation();
+  console.log(state);
 
   const postAddress = async () => {
     try {
@@ -53,17 +54,11 @@ const Delivery = () => {
 
   return (
     <Container>
-      <Search
-        placeholder='예) 판교역로 235,분당 주공, 삼평동 681'
-        onKeyDown={e => {
-          setKeyDown(true);
-          setAddress(e.target.value);
-        }}
-      />
-      {result ? result.map(el => <AddressBox result={el} />) : <Tip />}
-      우편번호 서비스
+      <Address>{state.data.zonecode}</Address>
+      <Address>{state.fullAddress}</Address>
+      <Search placeholder='나머지 주소를 입력해주세요'></Search>
     </Container>
   );
 };
 
-export default Delivery;
+export default DeliveryAfter;
