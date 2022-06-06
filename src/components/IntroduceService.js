@@ -16,7 +16,7 @@ import book from '../images/main_business_img04.jpg';
 const Container = styled.div`
   width: 100%;
   height: 822.5px;
-  border: 1px solid purple;
+  //border: 1px solid purple;
 `;
 const TitleBox = styled.div`
   position: relative;
@@ -26,7 +26,6 @@ const TitleBox = styled.div`
   align-items: center;
   width: 100%;
   height: 90px;
-  border: 1px solid green;
 `;
 const Title1 = styled.span`
   font-weight: 300;

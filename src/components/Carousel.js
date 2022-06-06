@@ -62,6 +62,9 @@ const Btn1 = styled.button`
   border-radius: 5px;
   margin-right: 5px;
   z-index: 19;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const Btn2 = styled(Btn1)`
   ${({ picture }) =>
