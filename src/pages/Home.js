@@ -32,8 +32,6 @@ const Home = () => {
       <Competency />
       <div>박스 3개</div>
       <Footer />
-      <Footer />
-      <Footer />
     </Container>
   );
 };
