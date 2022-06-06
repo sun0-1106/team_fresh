@@ -15,6 +15,7 @@ const Container = styled.div`
     rgba(0, 0, 0, 0) 0% 50%,
     rgba(0, 0, 0, 0.05) 50% 100%
   );
+  margin-top: 150px;
 `;
 const TitleBox = styled.div`
   position: absolute;

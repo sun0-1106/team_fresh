@@ -16,7 +16,7 @@ import book from '../images/main_business_img04.jpg';
 const Container = styled.div`
   width: 100%;
   height: 822.5px;
-  //border: 1px solid purple;
+  margin-top: 150px;
 `;
 const TitleBox = styled.div`
   position: relative;
