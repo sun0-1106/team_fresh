@@ -20,7 +20,7 @@ npm run start
 ┣ 📂pages<br/>
 ┃ ┣ 📜Blank.js<br/>
 ┃ ┣ 📜Delivery.js<br/>
-┃ ┣ 📜Delivery2.js<br/>
+┃ ┣ 📜DeliveryAfter.js<br/>
 ┃ ┣ 📜Home.js<br/>
 ┃ ┣ 📜Intro.js<br/>
 ┃ ┗ 📜PostCode.js<br/>
