@@ -22,9 +22,6 @@ const Address = styled.div`
 `;
 const Search = styled.input``;
 const DeliveryAfter = () => {
-  const [keyDown, setKeyDown] = useState(false);
-  const [address, setAddress] = useState();
-  const [result, setResult] = useState();
   const { state } = useLocation();
   console.log(state);
 
@@ -32,7 +29,7 @@ const DeliveryAfter = () => {
     try {
       const res = await axios.post(
         'https://tmsapidev.teamfresh.co.kr/api/delivery/searchDeliveryAreaForTest',
-        { addrBasic: address },
+        { addrBasic: state.fullAddress },
         {
           headers: {
             'Content-Type': 'application/json',
@@ -41,22 +38,26 @@ const DeliveryAfter = () => {
         },
       );
       if (res.data) {
-        setResult(res.data.result);
+        console.log(res.data);
+        alert('배송 가능합니다');
       }
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(() => {
-    postAddress();
-  }, []);
-
   return (
     <Container>
       <Address>{state.data.zonecode}</Address>
       <Address>{state.fullAddress}</Address>
       <Search placeholder='나머지 주소를 입력해주세요'></Search>
+      <button
+        onClick={() => {
+          postAddress();
+        }}
+      >
+        주소 입력
+      </button>
     </Container>
   );
 };
