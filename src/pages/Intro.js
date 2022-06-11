@@ -50,7 +50,7 @@ const Intro = () => {
   const goToTwo = () => {
     navigate('/delivery');
   };
-  //과제 1, 과제 2
+
   return (
     <Container>
       <img id='bg' src={BackImg}></img>
