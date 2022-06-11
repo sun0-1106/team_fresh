@@ -7,7 +7,6 @@ npm run start
 
 📦src<br/>
 ┣ 📂components<br/>
-┃ ┣
 ┃ ┣ 📜Carousel.js<br/>
 ┃ ┣ 📜Competency.js<br/>
 ┃ ┣ 📜Footer.js<br/>
