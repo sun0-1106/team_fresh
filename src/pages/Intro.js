@@ -27,7 +27,6 @@ const Box = styled.div`
 `;
 const Pic = styled.img`
   width: 300px;
-  //object-fit: cover;
 `;
 const TextBox = styled.div`
   width: 200px;
